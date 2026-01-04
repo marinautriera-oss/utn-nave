@@ -1,0 +1,855 @@
+/* --- 1. VARIABLES GLOBALES --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+:root {
+    --color-principal-50: #FFFFFF;
+    --color-principal-100: #FCFBFF;
+    --color-principal-125: #e7eaed;
+    --color-principal-150: #F0EAFC;
+    --color-pricipal-300_fondo: #F3EAFF;
+    --color-banner: #e4d7ff;
+    --color-principal-500: #bebebe;
+    --color-principal-805: #7C6E84;
+    --text-primary: #383737;
+    --text-secondary: #6a6a6a;
+    --color-principal-800: #652BDF;
+    --color-principal-800-hover: #531eca;
+    --color-brand-secondary: #31006F;
+    --color-principal-850_violeta-oscuro: #31006F;
+    --color-principal-900: #2b2b2b;
+
+    --font-main: "Inter:ital", sans-serif;
+    --container-max-width: 1022px;
+    --img-width: 1100px;
+    --img-height: 400px;
+}
+
+/* --- 2. CSS ARQUITECTURA BASE (base para body, enlaces, listas e imagenes)--- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-principal-100);
+    color: var(--color-principal-900);
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* --- 3. CONTENEDOR GLOBAL Y TIPOGRAFÍA (container, titulos, espaciadores)--- */
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0px;
+}
+
+.titulo-principal {
+
+    font-size: clamp(32px, 5vw, 40px);
+    font-weight: 700;
+    letter-spacing: -0.045em;
+    line-height: 1.1;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.subtitulo {
+    text-align: center;
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    margin-top: 26px;
+}
+
+.espacio-a {
+    height: 62.5px;
+}
+
+.espacio-b {
+    height: 72px;
+}
+
+/*--- 4. NAVEGACIÓN Y HEADER --- */
+
+.header-nav {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    height: 83px;
+    background: var(--color-principal-50);
+    border-bottom: 1px solid var(--color-principal-125);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 37px;
+}
+
+.header-movile {
+    display: none;
+}
+
+.nav-list {
+    display: flex;
+    margin-left: 20px;
+    white-space: nowrap;
+}
+
+.lista {
+    padding: 10px 24px;
+    margin: 0px 4px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    transform: translateY(-1px);
+    white-space: nowrap;
+}
+
+.lista:hover {
+    background: var(--color-banner);
+    color: var(--color-principal-850_violeta-oscuro);
+}
+
+.nav-derecha {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 16px;
+    transform: translateX(-21px);
+}
+
+.divider-line {
+    width: 1px;
+    height: 24px;
+    background: var(--color-principal-500);
+}
+
+.cta-button {
+    display: flex;
+    gap: 10px;
+    transform: translateX(20px);
+    transition: all 0.4s ease;
+}
+
+/* ----- 5. ESTILOS DE BOTONES ----- */
+
+/* Botones de Navegación */
+.cta-btn,
+.cta-btn-2 {
+    min-height: 41px;
+    padding-left: 32px;
+    padding-right: 32px;
+    border-radius: 50px;
+    font-size: 14.5px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    white-space: nowrap;
+}
+
+.cta-btn {
+    border: 1px solid var(--color-principal-800);
+    color: var(--color-principal-800);
+}
+
+.cta-btn-2 {
+    background: var(--color-principal-800);
+    color: var(--color-principal-50);
+    border: 1px solid var(--color-principal-800);
+    transition: all 0.4s ease;
+}
+
+
+.cta-btn:hover {
+    color: var(--color-principal-800-hover);
+    background-color: var(--color-pricipal-300_fondo);
+
+}
+.cta-btn-2:hover {
+    color: var(--color-principal-800-hover);
+    background-color: var(--color-pricipal-300_fondo);
+}
+
+/* Navbar Móvil */
+.container-nav-Mobile {
+    height: 56px;
+    display: none;
+    align-items: center;
+    background: var(--color-principal-50);
+    margin-bottom: 10px;
+}
+
+/* Logo Móvil */
+.logo-mobile {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.logo-mobile img {
+    height: 41px;
+}
+
+/* Menu Hamburguesa */
+.menu-icon {
+    display: none;
+    height: 24px;
+    width: 24px;
+    margin-left: 20px;
+}
+
+.menu-icon svg {
+    width: 100%;
+    height: 100%;
+    color: var(--color-principal-900);
+}
+
+/* Botones de Contenido General */
+.btn-primary, .btn-primary2 {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    
+}
+.btn-primary {
+    background-color: var(--color-principal-800);
+    color: var(--color-principal-50);
+    transition: all 0.4s ease;
+}
+.btn-primary:hover {
+    background-color: var(--color-principal-850_violeta-oscuro);
+}
+
+.btn-primary2{
+    background-color: var(--color-principal-50);
+    color: var(--color-principal-800);
+    transition: all 0.4s ease;
+}
+
+.btn-primary2:hover {
+    background-color: var(--color-principal-900);
+    color: var(--color-banner);
+}
+
+.banner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    position: relative;
+
+}
+
+/* Bloque de tarjetas */
+.benefits {
+    display: flex;
+    grid-template-columns: repeat(3, 317px);
+    gap: 25px;
+    justify-content: center;
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    transform: translateY(-11px);
+}
+
+.benefit-item {
+    flex: 1;
+    background: var(--color-principal-50);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+}
+
+.icono-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 19px;
+    width: 62px;
+    height: 62px;
+    background: var(--color-principal-150);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.icono-image {
+    font-style: normal;
+    font-weight: 400;
+    font-feature-settings: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    width: 24px;
+    height: 24px;
+}
+
+.icono-h3 {
+    margin-top: -5px;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.625rem;
+    text-align: left;
+    letter-spacing: -0.039em;
+}
+
+.icono-p {
+    margin-top: 17.5px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    text-align: left;
+}
+
+.promocion {
+    width: calc(100% - 20px);
+    max-width: 1022px;
+    height: 134px;
+    margin: 21px auto 0;
+    padding: 2px 40px;
+    background: rgb(54, 12, 114);
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-principal-50);
+}
+
+.texto-banner h3 {
+    font-size: 30px;
+    line-height: 2rem;
+    margin-left: 25px;
+    margin-bottom: 13px;
+    text-align: left;
+    letter-spacing: -0.039em;
+    font-weight: 600;
+}
+
+.texto-banner p {
+    margin-left: 25px;
+    text-align: left;
+    font-size: 18px;
+}
+
+.btn-primary-blanco {
+    color: var(--color-principal-50);
+}
+
+/* Métodos de Cobro */
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    margin-top: 48px;
+    width: 100%;
+}
+
+.method-card,
+.method-card-reverse {
+    background: var(--color-principal-50);
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: 350.16px;
+    padding: 0 40px;
+    width: 100%;
+;
+}
+
+.metodos-info{
+    flex: 1;
+    padding-right: 40px;
+    z-index: 100;
+}
+.method-card-reverse{
+    flex:1;
+    padding-left: 40px;
+    z-index: index 100;
+}
+.metodos-info h3, .method-card-reverse h3 {
+    font-size: 30px;
+    margin-bottom: 22px;
+    margin-top: 45px;
+    font-weight: 600;
+    z-index: 100;
+}
+
+.metodos-info p, .method-card-reverse p {
+    color: var(--color-principal-900);
+    margin-bottom: 60px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.8rem;
+    z-index: 100;
+
+}
+
+.method-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+    transition: transform .4s ease;
+    z-index: 50;
+
+}
+
+.method-img:hover {
+    transform: scale(1.1);
+}
+
+/* Contenedor principal del footer */
+
+.footer {
+    background: var(--color-principal-50);
+    border-bottom: 1px solid var(--color-principal-125);
+    padding: 20px 20px 0px 20px;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.footer-container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    grid-column-gap: 24px;
+    grid-row-gap: 8px;
+}
+
+.columna {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-bottom: 32px;
+}
+
+.list h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.list a {
+    font-size: 14px;
+    color: var(--color-principal-900);
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+.footer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.list a:hover {
+    color: var(--color-principal-800-hover);
+    text-decoration: underline;
+}
+
+/* --- 14. ADAPTACIÓN RESPONSIVE (MEDIA) --- */
+/* -------- 1117 PIXELES -------- */
+
+@media (max-width: 1117px) {
+    :root {
+        --img-height: auto;
+    }
+
+    .banner {
+        height: auto;
+    }
+
+
+    .btn-primary {
+        width: auto;
+        min-width: 200px;
+        padding: 12px 24px;
+        margin: 0;
+        text-align: center;
+    }
+}
+
+
+@media (max-widt: 1003px) {
+    .nave-list {
+        display: flex;
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    .lista {
+        padding: 10px 0px;
+        margin: 0;
+        white-space: nowrap;
+
+    }
+
+    .cta-btn {
+        min-height: 41px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .btn {
+        padding: 10px 0;
+    }
+}
+
+/* -------- 991 PIXELES -------- */
+
+@media (max-width: 991px) {
+    header {
+        height: 73px;
+        background: var(--color-principal-50);
+        border-bottom: 1px solid var(--color-principal-125);
+        position: sticky;
+        top: 0;
+        z-index: 2000;
+    }
+
+    .nave-list,
+    .lista,
+    .nav-derecha,
+    .logo {
+        display: none;
+    }
+
+    .header-movile,
+    .menu-hamburguesa,
+    .logoNave-movile img {
+        display: flex;
+    }
+
+    .cta-button {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        width: auto;
+        pointer-events: auto;
+    }
+
+    .btn-primary {
+        width: auto;
+        min-width: 250px;
+        margin: 0;
+    }
+
+
+    .cta-btn {
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+
+    .header-movile {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: normal;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+.logoNave-movile {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+    }
+    .payment-methods {
+        gap: 16px;
+    }
+}
+
+/* -------- 767 PIXELES -------- */
+
+@media (max-width: 767px) {
+
+    .payment-methods,
+    .benefits {
+        flex-direction: column;
+    }
+
+    .promocion {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: calc(100% - 20px);
+        margin: 0 auto;
+        padding: 40px 24px;
+        height: auto;
+        min-height: 150px;
+        border-radius: 16px;
+    }
+
+    .texto-banner {
+        max-width: 100%;
+        margin-bottom: 32px;
+        text-align: left;
+    }
+
+    .texto-banner h3 {
+        font-size: 28px;
+        margin-bottom: 12px;
+        line-height: 1.2;
+    }
+
+    .texto-banner p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .promocion .btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 16px;
+        margin-top: auto;
+        margin-bottom: 10px;
+    }
+
+    .seccion-metodos {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .method-card {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        background: var(--color-principal-50);
+        border-radius: 16px;
+        border: 1px solid var(--color-principal-125);
+        overflow: hidden;
+        width: 100%;
+        margin: 0;
+    }
+
+    .method-card-reverse {
+        flex-direction: column-reverse;
+    }
+
+    .method-img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 10px 10px 10px 10px;
+        background-color: transparent;
+    }
+
+    .method-img img {
+        max-width: 718px;
+        min-height: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .metodos-info {
+        padding: 0 24px 24px 24px;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .metodos-info h3 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        color: var(--color-principal-900);
+    }
+
+    .metodos-info p {
+        font-size: 16px;
+        color: var(--color-text-secondary);
+        margin-bottom: 20px;
+    }
+
+    .method-card .btn {
+        width: 100%;
+        margin-top: auto;
+        padding: 14px;
+        display: flex;
+        justify-content: center;
+        align-self: stretch;
+    }
+
+
+
+    .footer-container .footer-logo {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 40px;
+        float: none;
+    }
+
+    .columna {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 20px;
+        grid-row-gap: 40px;
+        padding: 0 10px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .list h4 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    .footer-list li {
+        margin-bottom: 0x;
+    }
+
+
+    .columna {
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+    }
+
+    .banner {
+        width: 95vw;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+
+    .cta-btn {
+        align-items: center;
+        width: 100%;
+    }
+
+    .btn-primary {
+        width: 100%;
+    }
+}
+
+
+    /* -------- 551 PIXELES -------- */
+
+
+    @media (min-width: 552px) {
+        .benefit-item {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media (max-width: 551px) {
+        .benefits {
+            grid-column: span 2;
+            max-width: 158px;
+            justify-self: center;
+        }
+
+        .benefit-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: var(--color-principal-50);
+            padding: 16px;
+            box-shadow: var(--shadow-soft);
+        }
+    }
+
+
+
+    /* -------- 480 PIXELES -------- */
+
+    @media (max-width: 480px) {
+
+        .columna {
+            grid-column-gap: 10px;
+        }
+
+        .list a {
+            font-size: 13px;
+        }
+
+        h1,
+        .texto-banner h3 {
+            font-size: 30px;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+            margin-bottom: 15px;
+        }
+
+
+        .metodos-info p {
+            font-size: 16px;
+            line-height: 1.4;
+            color: var(--color-text-secondary);
+        }
+
+        .metodos-info h3 {
+            font-size: 24px;
+        }
+
+        body {
+            padding: 0 5px;
+        }
+
+    }
+
+    @media (max-width: 353px) {
+        .btn {
+            font-size: 13px;
+            justify-content: flex-start;
+        }
+    }
